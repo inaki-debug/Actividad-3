@@ -126,20 +126,26 @@ end
 %SECCIÓN 9
 %Calculamos el jacobiano lineal de forma diferencial
 disp('Jacobiano lineal obtenido de forma diferencial');
-%Derivadas parciales de x respecto a th1 y th2
+%Derivadas parciales de x respecto a th1, th2, th3 y th4
 Jv11= functionalDerivative(PO(1,1,GDL), l1);
 Jv12= functionalDerivative(PO(1,1,GDL), l2);
-%Derivadas parciales de y respecto a th1 y th2
+Jv13= functionalDerivative(PO(1,1,GDL), l3);
+Jv14= functionalDerivative(PO(1,1,GDL), l4);
+%Derivadas parciales de y respecto a th1, th2, th3 y th4
 Jv21= functionalDerivative(PO(2,1,GDL), l1);
 Jv22= functionalDerivative(PO(2,1,GDL), l2);
-%Derivadas parciales de z respecto a th1 y th2
+Jv23= functionalDerivative(PO(2,1,GDL), l3);
+Jv24= functionalDerivative(PO(2,1,GDL), l4);
+%Derivadas parciales de z respecto a th1, th2, th3 y th4
 Jv31= functionalDerivative(PO(3,1,GDL), l1);
 Jv32= functionalDerivative(PO(3,1,GDL), l2);
+Jv33= functionalDerivative(PO(3,1,GDL), l3);
+Jv34= functionalDerivative(PO(3,1,GDL), l4);
 
-%Creamos la matríz del Jacobiano lineal
-jv_d=simplify([Jv11 Jv12;
-              Jv21 Jv22;
-              Jv31 Jv32]);
+%Creamos la matriz del Jacobiano lineal completo (3x4)
+jv_d=simplify([Jv11 Jv12 Jv13 Jv14;
+               Jv21 Jv22 Jv23 Jv24;
+               Jv31 Jv32 Jv33 Jv34]);
 pretty(jv_d);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
