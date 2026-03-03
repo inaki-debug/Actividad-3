@@ -4,7 +4,7 @@ close all
 clc
 %SECCIÓN 1
 %Declaración de variables simbólicas
-syms t1(t) t2(t) t3(t) t4(t)  t 
+syms l1(t) l2(t) l3(t) l4(t)  t 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %SECCIÓN 2
@@ -14,7 +14,7 @@ RP=[1 1 1 1];
 
 %SECCIÓN 3
 %Creamos el vector de coordenadas articulares
-Q= [t1, t2, t3, t4];
+Q= [l1, l2, l3, l4];
 disp('Coordenadas generalizadas');
 pretty (Q);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,14 +127,14 @@ end
 %Calculamos el jacobiano lineal de forma diferencial
 disp('Jacobiano lineal obtenido de forma diferencial');
 %Derivadas parciales de x respecto a th1 y th2
-Jv11= functionalDerivative(PO(1,1,GDL), th1);
-Jv12= functionalDerivative(PO(1,1,GDL), th2);
+Jv11= functionalDerivative(PO(1,1,GDL), l1);
+Jv12= functionalDerivative(PO(1,1,GDL), l2);
 %Derivadas parciales de y respecto a th1 y th2
-Jv21= functionalDerivative(PO(2,1,GDL), th1);
-Jv22= functionalDerivative(PO(2,1,GDL), th2);
+Jv21= functionalDerivative(PO(2,1,GDL), l1);
+Jv22= functionalDerivative(PO(2,1,GDL), l2);
 %Derivadas parciales de z respecto a th1 y th2
-Jv31= functionalDerivative(PO(3,1,GDL), th1);
-Jv32= functionalDerivative(PO(3,1,GDL), th2);
+Jv31= functionalDerivative(PO(3,1,GDL), l1);
+Jv32= functionalDerivative(PO(3,1,GDL), l2);
 
 %Creamos la matríz del Jacobiano lineal
 jv_d=simplify([Jv11 Jv12;
